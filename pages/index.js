@@ -1,18 +1,12 @@
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import Link from "next/link";
+import EventList from "../components/events/event-list";
+import { getFeaturedEvents } from "../dummy-data";
 
 export default function HomePage() {
+  const featuredEvents = getFeaturedEvents();
+
   return (
-    <div className={styles.container}>
-      <h1>HomePage</h1>
-      <li>
-        <Link href={"/portfolio"}>portfolio</Link>
-      </li>
-      <li>
-        <Link href={"/clients"}>portfolio</Link>
-      </li>
+    <div>
+      <EventList items={featuredEvents} />
     </div>
   );
 }
